@@ -4,7 +4,6 @@ import com.hollowlight.Hollowlight;
 import com.hollowlight.entity.stalker.StalkerEntity;
 import com.hollowlight.entity.watcher.WatcherEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
-import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
@@ -26,13 +25,13 @@ public final class ModEntities {
 	public static void register() {
 		WATCHER = Registry.register(Registries.ENTITY_TYPE, Identifier.of(Hollowlight.MOD_ID, "watcher"),
 				EntityType.Builder.create(WatcherEntity::new, SpawnGroup.MONSTER)
-						.dimensions(EntityDimensions.fixed(0.7f, 2.4f))
+						.dimensions(0.7f, 2.4f)
 						.maxTrackingRange(48)
 						.build());
 
 		STALKER = Registry.register(Registries.ENTITY_TYPE, Identifier.of(Hollowlight.MOD_ID, "stalker"),
 				EntityType.Builder.create(StalkerEntity::new, SpawnGroup.MONSTER)
-						.dimensions(EntityDimensions.fixed(1.1f, 1.0f))
+						.dimensions(1.1f, 1.0f)
 						.maxTrackingRange(40)
 						.build());
 

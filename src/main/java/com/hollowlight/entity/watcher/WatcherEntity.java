@@ -3,7 +3,6 @@ package com.hollowlight.entity.watcher;
 import com.hollowlight.dread.DreadManager;
 import com.hollowlight.sound.ModSounds;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.goal.GoalSelector;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.data.DataTracker;
@@ -42,6 +41,12 @@ import java.util.List;
  *   DORMANT   -> after inflicting a large dread spike via blink, goes
  *                inert for a cooldown so it doesn't chain-blink the player
  *                to death; this is a deliberate mercy window.
+ *
+ * initGoals() is intentionally left empty (no super call, no goal adds):
+ * this entity's stillness is the point, and goalSelector/targetSelector are
+ * protected final fields on MobEntity — they cannot be reassigned, only
+ * added to — so leaving them empty is the correct way to have zero
+ * pathfinding-driven behavior.
  */
 public class WatcherEntity extends HostileEntity {
 
@@ -79,8 +84,10 @@ public class WatcherEntity extends HostileEntity {
 
 	@Override
 	protected void initGoals() {
-		this.goalSelector = new GoalSelector();
-		this.targetSelector = new GoalSelector();
+		// Deliberately empty: the Watcher never paths or wanders. All
+		// behavior is driven explicitly from tick() below instead of the
+		// goal system, because its stillness must never be interrupted by
+		// vanilla wander/look goals.
 	}
 
 	public WatcherState getState() {
