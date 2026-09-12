@@ -1,7 +1,6 @@
 package com.hollowlight.datagen;
 
 import com.hollowlight.Hollowlight;
-import com.hollowlight.entity.ModEntities;
 import com.hollowlight.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider;
@@ -25,10 +24,9 @@ import java.util.function.BiConsumer;
  * blink-punishes aggression) is a valid alternate route to artifact
  * ingredients versus finding Chapel ritual structures.
  *
- * Uses SimpleFabricLootTableProvider with LootContextTypes.ENTITY, the
- * correct base class for entity loot in this API version — there is no
- * "FabricEntityLootTableProvider" class; that name does not exist in the
- * Fabric API for 1.21.1.
+ * Uses SimpleFabricLootTableProvider with LootContextTypes.ENTITY. The
+ * abstract method to implement is named accept(...), inherited from
+ * LootTableGenerator — not generate(...).
  */
 public class ModLootTableProvider extends SimpleFabricLootTableProvider {
 
@@ -40,7 +38,7 @@ public class ModLootTableProvider extends SimpleFabricLootTableProvider {
 	}
 
 	@Override
-	public void generate(BiConsumer<RegistryKey<LootTable>, LootTable.Builder> lootTableBiConsumer) {
+	public void accept(BiConsumer<RegistryKey<LootTable>, LootTable.Builder> lootTableBiConsumer) {
 		lootTableBiConsumer.accept(WATCHER_LOOT, LootTable.builder()
 				.pool(LootPool.builder()
 						.rolls(ConstantLootNumberProvider.create(1))
