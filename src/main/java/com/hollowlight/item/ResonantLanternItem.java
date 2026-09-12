@@ -1,5 +1,6 @@
 package com.hollowlight.item;
 
+import com.hollowlight.component.ModComponents;
 import com.hollowlight.dread.DreadManager;
 import com.hollowlight.sound.ModSounds;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -25,6 +26,11 @@ import net.minecraft.world.World;
  * 30 seconds of active use adds a flat dread tick, because the Lantern's
  * light is drawn from something the Understratum considers its own.
  * Right-click toggles it on/off so players can choose when to pay the cost.
+ *
+ * Per-stack state (lit flag, ticks-lit counter) is stored via Minecraft's
+ * Data Component system (see ModComponents) rather than NBT, since
+ * ItemStack has no NBT compound API in 1.21.1 — components are the only
+ * mechanism for attaching custom per-stack data.
  */
 public class ResonantLanternItem extends Item {
 
@@ -55,20 +61,21 @@ public class ResonantLanternItem extends Item {
 			player.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 30, 0, true, false));
 		}
 
-		int ticksLit = stack.getOrCreateNbt().getInt("TicksLit") + 1;
-		stack.getOrCreateNbt().putInt("TicksLit", ticksLit);
+		int ticksLit = stack.getOrDefault(ModComponents.LANTERN_TICKS_LIT, 0) + 1;
 		if (ticksLit >= DREAD_INTERVAL_TICKS) {
-			stack.getOrCreateNbt().putInt("TicksLit", 0);
+			stack.set(ModComponents.LANTERN_TICKS_LIT, 0);
 			DreadManager.addDread(player, 3.0f);
 			player.sendMessage(Text.literal("The lantern's light feels borrowed, not given.").formatted(Formatting.DARK_PURPLE, Formatting.ITALIC), true);
+		} else {
+			stack.set(ModComponents.LANTERN_TICKS_LIT, ticksLit);
 		}
 	}
 
 	public static boolean isLit(ItemStack stack) {
-		return stack.getOrCreateNbt().getBoolean("Lit");
+		return stack.getOrDefault(ModComponents.LANTERN_LIT, false);
 	}
 
 	public static void setLit(ItemStack stack, boolean lit) {
-		stack.getOrCreateNbt().putBoolean("Lit", lit);
+		stack.set(ModComponents.LANTERN_LIT, lit);
 	}
 }
