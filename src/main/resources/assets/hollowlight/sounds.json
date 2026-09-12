@@ -1,0 +1,49 @@
+{
+  "ambient.drone_low": {
+    "sounds": ["hollowlight:ambient/drone_low"],
+    "subtitle": "subtitles.hollowlight.drone"
+  },
+  "ambient.drone_high": {
+    "sounds": ["hollowlight:ambient/drone_high"],
+    "subtitle": "subtitles.hollowlight.drone"
+  },
+  "ambient.whisper_stinger": {
+    "sounds": ["hollowlight:ambient/whisper_stinger"],
+    "subtitle": "subtitles.hollowlight.whisper"
+  },
+  "ambient.heartbeat_stinger": {
+    "sounds": ["hollowlight:ambient/heartbeat_stinger"],
+    "subtitle": "subtitles.hollowlight.heartbeat"
+  },
+  "entity.watcher.detect": {
+    "sounds": ["hollowlight:entity/watcher/detect"],
+    "subtitle": "subtitles.entity.hollowlight.watcher.detect"
+  },
+  "entity.watcher.blink": {
+    "sounds": ["hollowlight:entity/watcher/blink"],
+    "subtitle": "subtitles.entity.hollowlight.watcher.blink"
+  },
+  "entity.stalker.footstep": {
+    "sounds": ["hollowlight:entity/stalker/footstep"]
+  },
+  "entity.stalker.snarl": {
+    "sounds": ["hollowlight:entity/stalker/snarl"],
+    "subtitle": "subtitles.entity.hollowlight.stalker.snarl"
+  },
+  "entity.stalker.lunge": {
+    "sounds": ["hollowlight:entity/stalker/lunge"],
+    "subtitle": "subtitles.entity.hollowlight.stalker.lunge"
+  },
+  "event.ritual_chant": {
+    "sounds": ["hollowlight:event/ritual_chant"],
+    "subtitle": "subtitles.hollowlight.ritual_chant"
+  },
+  "event.ritual_failure": {
+    "sounds": ["hollowlight:event/ritual_failure"],
+    "subtitle": "subtitles.hollowlight.ritual_failure"
+  },
+  "event.hunt_horn": {
+    "sounds": ["hollowlight:event/hunt_horn"],
+    "subtitle": "subtitles.hollowlight.hunt_horn"
+  }
+}

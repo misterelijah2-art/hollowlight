@@ -1,0 +1,18 @@
+{
+  "item.hollowlight.resonant_lantern": "Resonant Lantern",
+  "item.hollowlight.effigy_of_stillness": "Effigy of Stillness",
+  "item.hollowlight.tuning_fork_of_the_hollow": "Tuning Fork of the Hollow",
+  "item.hollowlight.starshard_fragment": "Starshard Fragment",
+  "entity.hollowlight.watcher": "The Watcher",
+  "entity.hollowlight.stalker": "The Stalker",
+  "biome.hollowlight.understratum": "Understratum",
+  "advancement.hollowlight.root.title": "Descent",
+  "advancement.hollowlight.root.description": "Set foot in the Understratum.",
+  "advancement.hollowlight.omens.title": "You Feel Watched",
+  "advancement.hollowlight.omens.description": "Reach the Omens dread threshold.",
+  "advancement.hollowlight.stalking.title": "Something Circles",
+  "advancement.hollowlight.stalking.description": "Survive a Stalker's lunge.",
+  "advancement.hollowlight.confrontation.title": "The Convergence",
+  "advancement.hollowlight.confrontation.description": "Survive a full hunt event at critical dread.",
+  "itemGroup.hollowlight.artifacts": "Hollowlight Artifacts"
+}
