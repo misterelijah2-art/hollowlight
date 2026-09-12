@@ -70,10 +70,10 @@ public class WatcherEntity extends HostileEntity {
 
 	public static DefaultAttributeContainer.Builder createAttributes() {
 		return HostileEntity.createHostileAttributes()
-				.add(EntityAttributes.MAX_HEALTH, 20.0)
-				.add(EntityAttributes.MOVEMENT_SPEED, 0.0)
-				.add(EntityAttributes.FOLLOW_RANGE, PERCEPTION_RANGE + 4)
-				.add(EntityAttributes.ATTACK_DAMAGE, 6.0);
+				.add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0)
+				.add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.0)
+				.add(EntityAttributes.GENERIC_FOLLOW_RANGE, PERCEPTION_RANGE + 4)
+				.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 6.0);
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 package com.hollowlight;
 
+import com.hollowlight.component.ModComponents;
 import com.hollowlight.dread.DreadAttachments;
 import com.hollowlight.entity.ModEntities;
 import com.hollowlight.event.HuntEventManager;
@@ -18,8 +19,8 @@ import org.slf4j.LoggerFactory;
  * intelligence, the Hollow Star, still watches. Being seen is the danger.
  *
  * This class wires up all server-side registries and systems in a fixed,
- * dependency-safe order: attachments -> sounds -> items -> entities ->
- * world generation -> the hunt/ritual event manager -> tick hooks.
+ * dependency-safe order: components -> attachments -> sounds -> items ->
+ * entities -> world generation -> the hunt/ritual event manager -> tick hooks.
  */
 public final class Hollowlight implements ModInitializer {
 
@@ -30,6 +31,7 @@ public final class Hollowlight implements ModInitializer {
 	public void onInitialize() {
 		LOGGER.info("[Hollowlight] The Understratum stirs. Initializing systems...");
 
+		ModComponents.register();
 		DreadAttachments.register();
 		ModSounds.register();
 		ModItems.register();
