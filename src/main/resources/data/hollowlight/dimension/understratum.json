@@ -2,7 +2,7 @@
   "type": "hollowlight:understratum",
   "generator": {
     "type": "minecraft:noise",
-    "settings": "hollowlight:understratum",
+    "settings": "minecraft:overworld_caves",
     "biome_source": {
       "type": "minecraft:fixed",
       "biome": "hollowlight:understratum"
