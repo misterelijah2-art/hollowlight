@@ -1,0 +1,30 @@
+{
+  "temperature": 0.5,
+  "downfall": 0.4,
+  "has_precipitation": false,
+  "effects": {
+    "fog_color": 1051050,
+    "sky_color": 0,
+    "water_color": 2170328,
+    "water_fog_color": 789516,
+    "ambient_sound": "hollowlight:ambient.drone_low",
+    "mood_sound": {
+      "sound": "hollowlight:ambient.whisper_stinger",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    }
+  },
+  "carvers": [],
+  "features": [[], [], [], [], [], [], [], [], [], []],
+  "spawners": {
+    "monster": [],
+    "creature": [],
+    "ambient": [],
+    "underground_water_creature": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {}
+}
