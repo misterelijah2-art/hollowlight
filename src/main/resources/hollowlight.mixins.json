@@ -4,9 +4,7 @@
   "package": "com.hollowlight.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
-  "client": [
-    "ClientPlayerEntityMixin"
-  ],
+  "client": [],
   "server": [],
   "injectors": {
     "defaultRequire": 1
