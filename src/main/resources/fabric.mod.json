@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "hollowlight",
+  "version": "${version}",
+  "name": "Hollowlight",
+  "description": "A cosmic-dread horror mod: descend into the Understratum, where being seen is the danger and the Hollow Star never blinks.",
+  "authors": [
+    "you"
+  ],
+  "contact": {
+    "homepage": "https://github.com/",
+    "sources": "https://github.com/"
+  },
+  "license": "MIT",
+  "icon": "assets/hollowlight/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.hollowlight.Hollowlight"
+    ],
+    "client": [
+      "com.hollowlight.client.HollowlightClient"
+    ]
+  },
+  "mixins": [
+    "hollowlight.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
